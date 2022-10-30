@@ -1,0 +1,38 @@
+<%- include('header') -%> 
+    <div class="container-fluid">
+      <table class="table table-striped table-bordered">
+      <tr>
+          <th>
+              name
+          </th>
+          <th>
+              stadium
+          </th>
+          <th>
+              Number of torphies
+          </th>
+          <th>
+              &nbsp;
+          </th>
+      </tr>
+      <% teams.forEach(function(team){ %>
+          <tr>
+              <td>
+                  <%= team.name %>
+              </td>
+              <td>
+                  <%= team.stadium %>
+              </td>
+              <td>
+                  <%= team.numberOfTrophies %>
+              </td>
+              <td style="width:30px;white-space: nowrap">
+                  <a href="/players/<%= team.id %>" class="btn btn-sm btn-success">Players</a>
+                  <a href="/team/edit/<%= team.id %>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i></a>
+                  <a href="/team/del/<%= team.id %>" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+              </td>
+          </tr>
+      <% }); %>
+  </table>
+  </div>
+<%- include('footer') -%> 

@@ -6,6 +6,15 @@
 
  module.exports = function (objectrepository) {
      return function (req, res, next) {
-         next();
-     };
- };
+    
+        setTimeout(function(){
+           res.locals.team= {
+                name:"Újpest",
+                stadium:"Szusza",
+                numberOfTrophies:1,
+                id:"1"
+            };
+            next();
+        },100)
+
+ }};

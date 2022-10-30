@@ -1,0 +1,37 @@
+<%- include('header') -%>
+  <div class="container-fluid">
+    <h2>
+      <% if( typeof team==='undefined' ){ %>
+        Make a team
+        <% }else{ %>
+          Edit team
+          <% } %>
+    </h2>
+    <form method="POST">
+      <div class="form-group">
+        <label for="name">Név</label>
+        <input type="text" class="form-control" id="name" name="name"
+          value="<%= (typeof team === 'undefined') ? '' : team.name %>">
+      </div>
+      <div class="form-group">
+        <label for="stadium">Cím</label>
+        <input type="text" class="form-control" id="stadium" name="stadium"
+          value="<%= (typeof team === 'undefined') ? '' : team.stadium %>">
+      </div>
+      <div class="form-group">
+        <label for="numberOfTrophies">Number of trophies</label>
+        <input type="text" class="form-control" id="numberOfTrophies" name="numberOfTrophies"
+          value="<%= (typeof team === 'undefined') ? '' : team.numberOfTrophies %>">
+      </div>
+      <input type="submit" class="btn btn-secondary" value="Save" />
+      <a class="btn btn-light" href="/team">Back</a>
+    </form>
+    <div>
+      <% if (typeof team === 'undefined') { %>
+      </div style="padding:20px">
+      <a role="button" class="btn btn-secondary" href="./index.html">Relegate team</a>
+      </div>
+    <% } %>
+   
+
+    <%- include('footer') -%>

@@ -1,0 +1,32 @@
+<% include('header') %> 
+<div class="container-fluid">
+    <form>
+      <div class="form-group">
+        <label for="nameFormControlInput">Name: </label>
+        <input type="text" class="form-control" id="nameFormControlInput">
+      </div>
+      <div class="form-group">
+        <label for="goalsFormControlInput">Goals: </label>
+        <input type="number" class="form-control" id="goalsFormControlInput">
+      </div>
+      <div class="form-group">
+        <label for="teamFormControlSelect">Select team</label>
+        <select multiple class="form-control" id="teamFormControlSelect">
+          <option>Ferencváros</option>
+          <option>Kisvárda</option>
+          <option>Fehérvár</option>
+          <option>Újpest</option>
+          <option>Felcsút</option>
+          <option>Debrecen</option>
+          <option>Pécs</option>
+        </select>
+      </div>
+    </form>
+    <a role="button" class="btn btn-secondary" href="./player-table.html">Retire player</a>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <a role="button" class="btn btn-dark" href="./player-table.html">Save</a>
+      <a role="button" class="btn btn-light" href="./player-table.html">Back</a>
+    </div>
+  </div>
+  <% include('footer') %> 
+</html>
