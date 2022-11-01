@@ -5,6 +5,8 @@
  const requireOption = require('../requireOption');
 
  module.exports = function (objectrepository) {
+
+    const TeamModel = requireOption(objectrepository,'TeamModel')
      return function (req, res, next) {
         setTimeout(function(){
 

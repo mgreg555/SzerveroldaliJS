@@ -1,20 +1,24 @@
-const renderMW = require('../middleware/renderMW');
+const renderMW = require('../middlewares/renderMW');
 
-const delPlayerMW = require('../middleware/PlayersMW/delPlayer');
-const getPlayersMW = require('../middleware/PlayersMW/getPlayers');
-const getPlayerMW = require('../Middleware/PlayersMW/getPlayer');
-const savePlayerMW = require('../middleware/PlayersMW/savePlayer');
+const delPlayerMW = require('../middlewares/PlayersMW/delPlayer');
+const getPlayersMW = require('../middlewares/PlayersMW/getPlayers');
+const getPlayerMW = require('../middlewares/PlayersMW/getPlayer');
+const savePlayerMW = require('../middlewares/PlayersMW/savePlayer');
 
-const delTeamMW = require('../middleware/TeamsMW/delTeam');
-const getTeamsMW = require('../middleware/TeamsMW/getTeams');
-const getTeamMW = require('../Middleware/TeamsMW/getTeam');
-const saveteamMW = require('../middleware/TeamsMW/saveTeam');
-
-
+const delTeamMW = require('../middlewares/TeamsMW/delTeam');
+const getTeamsMW = require('../middlewares/TeamsMW/getTeams');
+const getTeamMW = require('../middlewares/TeamsMW/getTeam');
+const saveteamMW = require('../middlewares/TeamsMW/saveTeam');
 
 
+
+const TeamModel = require('../models/team');
+const PlayerModel = require('../models/player');
 module.exports = function (app) {
-    const objRepo = {};
+    const objRepo = {
+        PlayerModel:PlayerModel,
+        TeamModel:TeamModel
+    };
 
    
     app.use('/team/new',
