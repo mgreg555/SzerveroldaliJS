@@ -5,7 +5,7 @@
  const requireOption = require('../requireOption');
 
  module.exports = function (objectrepository) {
-
+ 
     const TeamModel = requireOption(objectrepository,'TeamModel')
      return function (req, res, next) {
         setTimeout(function(){
@@ -23,10 +23,10 @@
                     stadium:"Groupama",
                     numberOfTrophies:"1",
                     id:"1"
-                }
+             }
             ];
             next();
         },100)
             
-         };
-};
+     };
+ };
